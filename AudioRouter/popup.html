@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-title-wrapper">
+        <span class="header-title">Audio Router</span>
+        <div id="audible-badge" class="badge badge-hidden">
+          <span class="badge-dot animate-pulse"></span>
+          <span class="badge-text">Audible</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <!-- Status Card -->
+      <section class="card card-tonal" id="status-card">
+        <div class="card-content">
+          <span class="card-title">Active Tab Routing</span>
+          <p class="card-subtitle" id="tab-title-text">Detecting active tab...</p>
+        </div>
+        <div class="card-actions">
+          <button id="btn-toggle-route" class="btn btn-filled" disabled>
+            <span class="btn-label">Route Audio</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Device List Section -->
+      <section class="device-section">
+        <div class="section-header">
+          <span class="section-title">Output Destination</span>
+          <button id="btn-refresh" class="btn-icon" title="Refresh Devices">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Permission Request Banner -->
+        <div id="permission-banner" class="banner banner-hidden">
+          <p class="banner-text">Allow device labels to identify speakers.</p>
+          <button id="btn-grant-permission" class="btn btn-tonal-sm">Allow</button>
+        </div>
+
+        <!-- List of Audio Devices -->
+        <div id="device-list" class="device-list">
+          <div class="loading-state">Loading output devices...</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Status & Credit -->
+    <footer class="app-footer">
+      <span id="footer-status">Idle</span>
+      <div class="credit-text">Made with 💖 by Mycho Famadico</div>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
